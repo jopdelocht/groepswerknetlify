@@ -1,0 +1,85 @@
+body {
+    background-image: url('./images/clouds.png');
+}
+
+@media only screen and (min-width: 600px) {
+    div#contmain {
+        min-width: 87rem;
+    }
+
+    img.logo {
+        margin-bottom: 1rem;
+        width: 36.7rem;
+    }
+
+    div#contmain {
+        border-radius: 3rem;
+        padding: 3rem;
+        background-color: #ffffff40;
+        margin: 2rem 4rem 2rem 4rem;
+    }
+}
+
+div#omschrijvingcontainer {
+    font-size: 1.25rem;
+}
+
+img.umbrella {
+    width: 10.5rem;
+}
+
+div#temp {
+    font-size: 6rem;
+}
+
+div#date {
+    font-size: 2rem;
+}
+
+img.result {
+    height: 34.5rem;
+    border-radius: 27px;
+}
+
+button#button-addon2 {
+    background-color: rebeccapurple;
+    font-weight: bold;
+    color: white;
+}
+
+#historyfield {
+    list-style-type: none;
+}
+
+/* Mobile Devices styling */
+@media only screen and (max-width: 600px) {
+
+    div#contmain {
+        width: 31.5rem;
+        padding: 3rem;
+        background-color: #ffffff40;
+    }
+
+    img.umbrella {
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    img.result {
+        height: 23rem;
+        border-radius: 27px;
+    }
+
+    img.logo {
+        width: 22.5rem;
+        margin-bottom: 1rem;
+    }
+
+    div#temp {
+        font-size: 6rem;
+    }
+
+    button#resetbutton {
+        margin-bottom: 1rem;
+    }
+}
