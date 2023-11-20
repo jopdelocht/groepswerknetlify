@@ -21,13 +21,14 @@ const check = () => {
     rainView.innerHTML = '';
     tempView.innerHTML = '';
 
+    /* Here is the object array where we stored some description text about the forecast and clothing advices, also concattenated the searched city name */
     let tekstOmschrijving = {};
 
     tekstOmschrijving.winter = 'Het is berekoud in ' + city + '! Het vriest buiten dus je kan je best warm kleden, een dikke jas, muts, sjaal en handschoenen zijn geen overbodige luxe.';
     tekstOmschrijving.subwinter = 'Het is koud in ' + city + ', vermijd de kans om ziek te worden en draag een dikke jas, lange broek of rok. Draag kleding met een goede pasvorm. Kleding die te los zit, kan te koud zijn, terwijl kleding die te strak zit, kan belemmeren.';
     tekstOmschrijving.herfst = 'Het is fris in ' + city + ', een jas met lange mouwen en een lange broek/panty zijn aangewezen. Zachte, warme stoffen zoals wol en fleece zijn perfect.';
     tekstOmschrijving.lente = 'Met deze temperaturen in ' + city + ' werk je best in laagjes kleding, dit geeft je flexibiliteit om je outfit aan te passen aan het weer.';
-    tekstOmschrijving.subzomer =  'Het is warm in ' + city + ' draag lichtgewicht, ademende stoffen. Katoen, linnen en zijde zijn perfect voor deze temperaturen. Draag kleding in lichte kleuren. Lichte kleuren reflecteren het zonlicht en houden je koel.';
+    tekstOmschrijving.subzomer = 'Het is warm in ' + city + ' draag lichtgewicht, ademende stoffen. Katoen, linnen en zijde zijn perfect voor deze temperaturen. Draag kleding in lichte kleuren. Lichte kleuren reflecteren het zonlicht en houden je koel.';
     tekstOmschrijving.zomer = 'Het is heel warm in ' + city + ' draag kleding met korte mouwen of zonder mouwen. Dit helpt om je lichaam af te koelen. Draag kleding met een losse pasvorm. Dit zorgt ervoor dat de lucht kan circuleren en dat je niet te warm wordt.';
 
 
@@ -65,8 +66,6 @@ const check = () => {
                 const omschrijving = document.getElementById('omschrijvingcontainer');
                 omschrijving.innerHTML = tekstOmschrijving.subwinter;
 
-
-
             } else if (temperatureCelsius > 10 && temperatureCelsius <= 15) {
                 const image = document.createElement('img');
                 image.src = './images/herfstv2.png';
@@ -76,8 +75,6 @@ const check = () => {
                 console.log(tekstOmschrijving.herfst);
                 const omschrijving = document.getElementById('omschrijvingcontainer');
                 omschrijving.innerHTML = tekstOmschrijving.herfst;
-
-
 
             } else if (temperatureCelsius > 15 && temperatureCelsius <= 20) {
                 const image = document.createElement('img');
@@ -89,8 +86,6 @@ const check = () => {
                 const omschrijving = document.getElementById('omschrijvingcontainer');
                 omschrijving.innerHTML = tekstOmschrijving.lente;
 
-
-
             } else if (temperatureCelsius > 20 && temperatureCelsius <= 25) {
                 const image = document.createElement('img');
                 image.src = './images/subzomerv2.png';
@@ -101,8 +96,6 @@ const check = () => {
                 const omschrijving = document.getElementById('omschrijvingcontainer');
                 omschrijving.innerHTML = tekstOmschrijving.subzomer;
 
-
-
             } else {
                 const image = document.createElement('img');
                 image.src = './images/zomerv2.png';
@@ -112,7 +105,6 @@ const check = () => {
                 console.log(tekstOmschrijving.zomer);
                 const omschrijving = document.getElementById('omschrijvingcontainer');
                 omschrijving.innerHTML = tekstOmschrijving.zomer;
-
 
             }
 
@@ -141,7 +133,7 @@ const check = () => {
             if (storedHistory) {
                 existingHistory = JSON.parse(storedHistory);
             } else {
-                //if not we make existing history to empty array
+                //if not, we make existing history to empty array
                 existingHistory = [];
             }
 
@@ -157,6 +149,7 @@ const check = () => {
         });
 };
 
+/* empty the innerhtml and added for loop for items */
 const showHistory = () => {
     historyList = document.getElementById('historyfield');
     historyList.innerHTML = '';
@@ -176,9 +169,8 @@ const resetHistory = () => {
     localStorage.removeItem('history');
     showHistory(); // Refresh the display after clearing local storage
 }
-
+// button to reset storage is over here
 document.getElementById('resetbutton').addEventListener('click', resetHistory);
-
 
 //We added the eventlistener for the enter-key, when pressed it's searching for weather
 document.getElementById('location').addEventListener('keydown', (event) => {
